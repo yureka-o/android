@@ -15,7 +15,14 @@
            sync-f="true"
            sync-j="8" />
 
-  <project path="build/make" name="platform/build" groups="pdk" >
+  <!-- Tomato additions -->
+  <project path="device/yu/tomato" name="yureka-o/android_device_yu_tomato" remote="github" revision="o" />
+  <project path="device/qcom/common" name="yureka-o/android_device_qcom_common" remote="github" revision="o" />
+  <project path="device/cyanogen/msm8916-common" name="yureka-o/android_device_cyanogen_msm8916-common" remote="github" revision="o" />
+  <project path="kernel/cyanogen/msm8916" name="yureka-o/android_kernel_cyanogen_msm8916" remote="github" revision="o" />
+  <project path="system/core" name="yureka-o/platform_system_core" remote="github" revision="8.0" />
+
+  <project path="build/make" name="yureka-o/build" remote="github" groups="pdk" revision="8.0" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -557,7 +564,7 @@
   <project path="system/connectivity/wificond" name="platform/system/connectivity/wificond" groups="pdk" />
   <project path="system/connectivity/wifilogd" name="platform/system/connectivity/wifilogd" groups="pdk" />
   <project path="system/chre" name="platform/system/chre" groups="pdk" />
-  <project path="system/core" name="platform/system/core" groups="pdk" />
+  <!-- <project path="system/core" name="platform/system/core" groups="pdk" /> -->
   <project path="system/extras" name="platform/system/extras" groups="pdk" />
   <project path="system/gatekeeper" name="platform/system/gatekeeper" groups="pdk" />
   <project path="system/hardware/interfaces" name="platform/system/hardware/interfaces" groups="pdk" />
